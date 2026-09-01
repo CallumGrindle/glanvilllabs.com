@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glanvill Labs — get your business AI-ready</title>
+<meta name="description" content="Glanvill Labs gets service businesses AI-ready with the modelling tools of manufacturing and logistics: audit, build, manage. Every recommendation is measured before you spend.">
+<link rel="canonical" href="https://glanvilllabs.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glanvill Labs">
+<meta property="og:title" content="Glanvill Labs — get your business AI-ready">
+<meta property="og:description" content="Glanvill Labs gets service businesses AI-ready with the modelling tools of manufacturing and logistics: audit, build, manage. Every recommendation is measured before you spend.">
+<meta property="og:url" content="https://glanvilllabs.com/">
+<meta property="og:image" content="https://glanvilllabs.com/images/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Glanvill Labs — get your business AI-ready">
+<meta name="twitter:description" content="Glanvill Labs gets service businesses AI-ready with the modelling tools of manufacturing and logistics: audit, build, manage. Every recommendation is measured before you spend.">
+<meta name="twitter:image" content="https://glanvilllabs.com/images/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0c0c'/%3E%3Crect x='3' y='3' width='10' height='10' fill='none' stroke='%2341d99a' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+/* v6 — dark instrument. Near-black ground, grey-ramp hierarchy, one phosphor
+   accent under 5% coverage, hairline rules instead of boxes, mono for
+   labels/figures only. Offer is a ruled rate-card ledger: rows, not cards. */
+:root{
+  --bg:#0a0c0c; --panel:#0f1212; --ink:#e8edeb; --body:#c9d2ce;
+  --muted:#9aa4a0; --dim:#707b76;
+  --accent:#41d99a; --accent-dim:#2fae7a; --amber:#e0a63e;
+  --rule:rgba(232,237,235,.13); --rule-strong:rgba(232,237,235,.32);
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;background-image:radial-gradient(rgba(232,237,235,.055) 1px,transparent 1.4px);background-size:28px 28px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+h1,h2{font-weight:600;letter-spacing:-0.022em;line-height:1.06;margin:0 0 20px;color:var(--ink)}
+h1{font-size:clamp(42px,5.6vw,76px)}
+h2{font-size:clamp(26px,3vw,38px)}
+h3{font-size:17px;line-height:1.35;margin:0 0 8px;color:var(--ink);font-weight:600}
+p{margin:0 0 14px}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{display:block;width:100%;height:auto}
+
+/* schedule annotations, CSS counters only */
+main>section{scroll-margin-top:80px}
+
+.btn{display:inline-block;padding:13px 24px;font-family:var(--mono);font-size:13.5px;font-weight:600;letter-spacing:.02em;text-decoration:none;line-height:1.2;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#07100c;border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-dim);border-color:var(--accent-dim)}
+.btn-ghost{border-color:var(--rule-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink)}
+
+header.site{padding:15px 0;border-bottom:1px solid var(--rule);background:rgba(10,12,12,.92);backdrop-filter:blur(6px);position:sticky;top:0;z-index:10}
+.site-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wordmark{font-family:var(--mono);font-weight:700;font-size:13.5px;letter-spacing:.26em;text-decoration:none;color:var(--ink)}
+.wordmark span{color:var(--accent)}
+nav{display:flex;gap:26px;align-items:center;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:not(.btn){padding-bottom:2px}
+nav a:not(.btn):hover{color:var(--ink)}
+nav .btn{padding:8px 15px;font-size:12px}
+
+/* hero: compact, left-set, grey abstract under white title */
+.hero{padding:56px 0 40px}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0 0 30px;text-transform:uppercase;letter-spacing:.16em}
+.hero h1{max-width:900px}
+.hero h1 .nw{white-space:nowrap}
+.hero-sub{font-size:18.5px;line-height:1.6;color:var(--body);max-width:620px;margin:20px 0 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 0}
+.btn-note{margin:12px 0 0;font-family:var(--mono);font-size:12px;letter-spacing:.02em;color:var(--dim)}
+.proof{display:flex;flex-wrap:wrap;gap:12px 44px;list-style:none;margin:38px 0 0;padding:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--muted)}
+.proof li::before{content:"+ ";color:var(--accent)}
+
+/* motion: entrance rise on the hero (CSS), scroll reveal + stat count-up driven
+   by the inline script at the end of the body (works in every browser; the page
+   is fully visible with scripts disabled). Everything sits inside a
+   prefers-reduced-motion guard. */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+  .hero .eyebrow{animation:rise .6s cubic-bezier(.2,.7,.3,1) both}
+  .hero h1{animation:rise .6s cubic-bezier(.2,.7,.3,1) .07s both}
+  .hero-sub{animation:rise .6s cubic-bezier(.2,.7,.3,1) .14s both}
+  .hero-actions{animation:rise .6s cubic-bezier(.2,.7,.3,1) .22s both}
+  .btn-note{animation:rise .6s cubic-bezier(.2,.7,.3,1) .26s both}
+  .proof{animation:rise .6s cubic-bezier(.2,.7,.3,1) .3s both}
+  .btn{transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
+  .btn:hover{transform:translateY(-1px)}
+  nav a{transition:color .18s ease}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s cubic-bezier(.2,.7,.3,1),transform .65s cubic-bezier(.2,.7,.3,1);transition-delay:calc(var(--stagger,0)*90ms)}
+  .reveal.in{opacity:1;transform:none}
+}
+
+/* offer: rate-card ledger. Heavy top/bottom rules, hairlines between rows.
+   Rows cannot misalign; the price column reads as a single scan line. */
+
+.offer{padding:34px 0 96px}
+.ledger{border-top:2px solid var(--rule-strong);border-bottom:2px solid var(--rule-strong);counter-reset:step}
+.ledger-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 48px;padding:30px 0;border-top:1px solid var(--rule);counter-increment:step}
+.ledger-row:first-child{border-top:0}
+.ledger-row .k{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-top:5px}
+.ledger-row .k::before{content:counter(step,decimal-leading-zero);display:block;color:var(--accent);margin-bottom:6px}
+.ledger-row .d{margin:0;font-size:16px;line-height:1.65;max-width:58ch;color:var(--body)}
+.ledger-row .money{text-align:right;font-family:var(--mono);margin:0}
+.ledger-row .amt{display:block;font-size:24px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
+.ledger-row .terms{display:block;font-size:12.5px;line-height:1.7;color:var(--muted);margin-top:8px}
+.offer-cta{margin:22px 0 0}
+
+/* evidence board: one worked example told as two ruled steps — map the
+   operation, then the simulated comparison. */
+.board{padding:96px 0;border-top:1px solid var(--rule-strong)}
+.board .lede{max-width:680px}
+.demo{margin-top:52px;border-top:2px solid var(--rule-strong);border-bottom:2px solid var(--rule-strong)}
+.step{border-top:1px solid var(--rule);padding:36px 0 40px}
+.step:first-child{border-top:0}
+.step-k{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:0 0 30px}
+.step-k span{color:var(--accent);margin-right:12px}
+
+/* flow diagram: HTML cards over an SVG curve underlay. Cards carry real depth
+   (gradient fill, inset highlight, soft shadow); wires are horizontal-tangent
+   beziers. Motion is a single device: a soft light streak that glides along
+   each wire. Streaks exist only when reduced motion is off; the static
+   diagram is complete without them. */
+.flow-wrap{overflow-x:auto;padding:4px 0 8px}
+.flow-stage{position:relative;width:960px;height:248px;margin:0 auto}
+.flow-lines{position:absolute;inset:0;width:100%;height:100%}
+.wire{fill:none;stroke:rgba(224,166,62,.4);stroke-width:1}
+.beam{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:14 300;stroke-dashoffset:14;opacity:0;filter:drop-shadow(0 0 4px rgba(65,217,154,.6))}
+.fnode{position:absolute;width:160px;height:56px;display:flex;align-items:center;justify-content:center;font-family:"Share Tech Mono",var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid rgba(224,166,62,.85);border-radius:4px;box-shadow:0 0 12px rgba(224,166,62,.16),inset 0 0 9px rgba(224,166,62,.05)}
+.fn1{left:40px;top:96px}
+.fn2{left:400px;top:24px}
+.fn3{left:400px;top:168px}
+.fn4{left:760px;top:96px}
+@media (prefers-reduced-motion: no-preference){
+  .beam{opacity:1;animation:beam 3.2s cubic-bezier(.45,0,.3,1) infinite}
+  .b3,.b4{animation-delay:1.6s}
+}
+@keyframes beam{0%{stroke-dashoffset:14}55%{stroke-dashoffset:-100}100%{stroke-dashoffset:-100}}
+
+/* comparison table: ruled instrument grid, large mono readouts */
+.cmp-wrap{overflow-x:auto}
+.cmp{width:100%;border-collapse:collapse;margin:0;border:1px solid var(--rule)}
+.cmp th,.cmp td{padding:16px 20px;border:1px solid var(--rule);text-align:right;white-space:nowrap}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp thead th{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cmp tbody th{font-weight:400;font-size:14.5px;color:var(--body)}
+.cmp td{font-family:var(--mono);font-size:20px;letter-spacing:-.01em;color:var(--ink)}
+.cmp td.delta{color:var(--accent);font-weight:600}
+.board-cta{margin:44px 0 0}
+
+main>section.plain{padding:88px 0;border-top:1px solid var(--rule)}
+.lede{font-size:18px;color:var(--muted);max-width:640px}
+
+.method-grid{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:72px;align-items:start}
+.tech-list{counter-reset:tech;border-bottom:1px solid var(--rule)}
+.tech-list>div{counter-increment:tech;border-top:1px solid var(--rule);padding:26px 0;display:grid;grid-template-columns:56px 200px minmax(0,1fr);gap:0 28px}
+.tech-list>div::before{content:counter(tech,upper-alpha) ".";grid-row:1/3;font:500 15px/1.5 var(--mono);color:var(--accent)}
+.tech-list h3{font-size:16px;margin:0;grid-column:2}
+.tech-list p{font-size:14.5px;line-height:1.6;margin:0;grid-column:3;grid-row:1/3;color:var(--muted)}
+
+main>section.claims{padding:56px 0}
+.claims-row{display:grid;grid-template-columns:1fr 1fr}
+.claims-row>div{padding-right:56px}
+.claims-row>div+div{border-left:1px solid var(--rule-strong);padding-left:56px;padding-right:0}
+.claims-row h3{font-size:16px;margin:0 0 10px}
+.claims-row p{font-size:14.5px;line-height:1.62;margin:0;color:var(--muted)}
+
+#contact{padding:96px 0;border-top:1px solid var(--rule-strong);background:var(--panel)}
+#contact .band{max-width:640px}
+#contact p{font-size:17px}
+.contact-action{margin:30px 0 0}
+.contact-alt{margin:14px 0 0;font-size:14.5px;color:var(--muted)}
+
+footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--dim)}
+
+@media (max-width:980px){
+  .method-grid{grid-template-columns:1fr;gap:12px}
+  .ledger-row{grid-template-columns:120px minmax(0,1fr);gap:0 32px}
+  .ledger-row .money{grid-column:2;text-align:left;margin-top:14px}
+}
+@media (max-width:860px){
+  .hero{padding:44px 0 32px}
+  .offer{padding:24px 0 72px}
+  .ledger-row{grid-template-columns:1fr;padding:24px 0}
+  .ledger-row .d{margin-top:12px}
+  .ledger-row .money{grid-column:1;margin-top:14px}
+  main>section.plain{padding:64px 0}
+  .step{padding:28px 0 32px}
+  /* comparison table restacked: one bordered block per metric, the three
+     readouts side by side under mini column labels, so the change figure is
+     on screen without panning */
+  .cmp,.cmp tbody{display:block}
+  .cmp{border:0;border-top:1px solid var(--rule)}
+  .cmp thead{display:none}
+  .cmp tbody tr{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 14px;border:1px solid var(--rule);border-top:0;padding:16px}
+  .cmp tbody th{grid-column:1/-1;border:0;padding:0 0 12px;font-size:13.5px}
+  .cmp td{display:block;border:0;padding:0;text-align:left;font-size:16px}
+  .cmp td::before{display:block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:5px}
+  .cmp td:nth-child(2)::before{content:"Today"}
+  .cmp td:nth-child(3)::before{content:"After AI"}
+  .cmp td:nth-child(4)::before{content:"Change"}
+  .board{padding:72px 0}
+  #contact{padding:72px 0}
+  .tech-list>div{grid-template-columns:40px minmax(0,1fr)}
+  .tech-list h3{grid-column:2}
+  .tech-list p{grid-column:2;grid-row:auto;margin-top:8px}
+  main>section.claims{padding:48px 0}
+  .claims-row{grid-template-columns:1fr;gap:28px}
+  .claims-row>div{padding-right:0}
+  .claims-row>div+div{border-left:0;border-top:1px solid var(--rule-strong);padding-left:0;padding-top:28px}
+  header.site{position:static}
+  nav{gap:10px 20px;row-gap:10px}
+}
+</style>
+</head>
+<body>
+<div id="top"></div>
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="wordmark" href="#top">GLANVILL<span>&nbsp;LABS</span></a>
+    <nav>
+      <a href="#package">What we offer</a>
+      <a href="#evidence">How we analyse</a>
+      <a href="#method">How we measure</a>
+      <a href="#pricing">Pricing</a>
+      <a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book a call</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Operational modelling &amp; AI integration</p>
+    <h1>Get your business <span class="nw">AI-ready.</span></h1>
+    <p class="hero-sub">We find what's really slowing your business down and measure where AI gives the biggest boost. See every fix's cost saving before you implement any change.</p>
+    <p class="hero-sub">We use the same simulation, queueing analysis and process mining techniques that manufacturing and logistics firms rely on.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book an audit call</a>
+    </div>
+    <p class="btn-note">A 30-minute conversation about your operation, no preparation needed.</p>
+    <ul class="proof">
+      <li>Fixed prices, published below</li>
+      <li>Bottlenecks costed in £/month, at your staff rates</li>
+      <li>Every fix measured in the model before you buy it</li>
+    </ul>
+  </div>
+</section>
+
+<section class="offer" id="package">
+  <div class="wrap">
+    <h2>What we offer</h2>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="k">Audit</span>
+        <p class="d">We model your business operation, flag the bottlenecks, and cost each one in £/month. You get the report, the numbers, and the model itself. Fixed price.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Build</span>
+        <p class="d">We build the intervention simulated in your audit: AI, automation, or a process change. Yours to run, change, and keep: no licence fees, no platform toll.</p>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Manage</span>
+        <p class="d">We run monthly simulation calibration on fresh data, maintain your AI integration, and send updates on what changed plus scheduled calls to guide you through the transition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="board" id="evidence">
+  <div class="wrap">
+    <h2>How we analyse</h2>
+    <p class="lede">We model how your business runs to identify where the biggest efficiency gains can be made by using industry-standard operational simulation techniques, and test each change in the simulator before committing to anything.</p>
+    <div class="demo">
+      <div class="step">
+        <p class="step-k"><span>01</span>Map your business operations</p>
+        <div class="flow-wrap">
+          <div class="flow-stage" role="img" aria-label="Flow diagram: tasks come in, split between AI and the team, and merge again for review.">
+            <svg class="flow-lines" viewBox="0 0 960 248" aria-hidden="true">
+              <path class="wire" d="M200,124 C300,124 300,52 400,52"/>
+              <path class="wire" d="M200,124 C300,124 300,196 400,196"/>
+              <path class="wire" d="M560,52 C660,52 660,124 760,124"/>
+              <path class="wire" d="M560,196 C660,196 660,124 760,124"/>
+              <path class="beam b1" pathLength="100" d="M200,124 C300,124 300,52 400,52"/>
+              <path class="beam b2" pathLength="100" d="M200,124 C300,124 300,196 400,196"/>
+              <path class="beam b3" pathLength="100" d="M560,52 C660,52 660,124 760,124"/>
+              <path class="beam b4" pathLength="100" d="M560,196 C660,196 660,124 760,124"/>
+            </svg>
+            <div class="fnode fn1">Tasks</div>
+            <div class="fnode fn2">AI</div>
+            <div class="fnode fn3">Team</div>
+            <div class="fnode fn4">Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <p class="step-k"><span>02</span>Simulate and compare</p>
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead>
+              <tr><th scope="col">Result</th><th scope="col">Today</th><th scope="col">After AI integration</th><th scope="col">Change</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Cost per month</th><td><span class="v">£66,360</span></td><td><span class="v">£44,766</span></td><td class="delta"><span class="v">−£21,594</span></td></tr>
+              <tr><th scope="row">Time per job</th><td><span class="v">7.5 hr</span></td><td><span class="v">4.8 hr</span></td><td class="delta"><span class="v">−36%</span></td></tr>
+              <tr><th scope="row">Jobs finished per month</th><td><span class="v">79</span></td><td><span class="v">92</span></td><td class="delta"><span class="v">+16%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="board-cta"><a class="btn btn-ghost" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book an audit call</a></p>
+  </div>
+</section>
+
+<section class="plain" id="method">
+  <div class="wrap method-grid">
+    <div class="method-head">
+      <h2>The method behind the numbers</h2>
+      <p class="lede">Four techniques, each standard in manufacturing and healthcare capacity planning. Each one ends with a concrete deliverable.</p>
+    </div>
+    <div class="tech-list">
+      <div>
+        <h3>Process mining</h3>
+        <p>A map of your real process, with every detour. We read the event logs your systems already keep to see how work actually flows.</p>
+      </div>
+      <div>
+        <h3>Discrete-event simulation</h3>
+        <p>The queue points in your pipeline, costed in £/month, from a working model calibrated against your own data.</p>
+      </div>
+      <div>
+        <h3>Queueing analysis</h3>
+        <p>The staffing arithmetic for each stage, using the same maths call centres and A&amp;E departments plan with.</p>
+      </div>
+      <div>
+        <h3>Scenario testing</h3>
+        <p>An expected value for each candidate fix, with confidence intervals, measured in the model before you commit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plain claims">
+  <div class="wrap">
+    <div class="claims-row">
+      <div>
+        <h3>Built on what really happens</h3>
+        <p>Every suggestion we make comes from a working model of how your business actually runs, built from your own records rather than from how anyone describes the work. If a change does not pay in the model, we will not recommend it.</p>
+      </div>
+      <div>
+        <h3>Client confidentiality</h3>
+        <p>We strip names before anything is modelled and work from workflow timestamps alone. The model finds bottlenecks in how work moves, and it never scores individuals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plain" id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span class="k">Audit</span>
+        <p class="money"><span class="amt">£5,000</span><span class="terms">up to 15 staff · £8,500 for 16–50 · larger firms quoted<br>fixed price</span></p>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Build</span>
+        <p class="money"><span class="amt">£8,000–£25,000</span><span class="terms">fixed per project · scoped and quoted in the audit report</span></p>
+      </div>
+      <div class="ledger-row">
+        <span class="k">Manage</span>
+        <p class="money"><span class="amt">from £950</span><span class="terms">per month · £1,950 for 16–50 staff</span></p>
+      </div>
+    </div>
+    <p class="offer-cta"><a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book an audit call</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="band">
+      <h2>Book a call</h2>
+      <p>Glanvill Labs is an operational modelling and AI integration practice based in Scotland. We manage all simulation and implementation so you have direct contact with us. No outsourcing or handoffs.</p>
+      <p>A 30-minute conversation about your operation, no preparation needed.</p>
+      <p class="contact-action"><a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book a 30-minute call</a></p>
+      <p class="contact-alt">Prefer email? <a href="mailto:hello@glanvilllabs.com">hello@glanvilllabs.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site">
+  <div class="wrap">Glanvill Labs Ltd · Company No. SC893965</div>
+</footer>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(!matchMedia('(prefers-reduced-motion: no-preference)').matches)return;
+
+  // Scroll reveal: groups stagger their children; lone elements rise alone.
+  var groups=['.ledger','.demo','.claims-row','.tech-list'];
+  var singles=['main h2','.lede','.offer-cta','.board-cta','.contact-action','.contact-alt'];
+  groups.forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(g){
+      Array.prototype.forEach.call(g.children,function(el,i){
+        el.classList.add('reveal');el.style.setProperty('--stagger',i);
+      });
+    });
+  });
+  document.querySelectorAll(singles.join(',')).forEach(function(el){el.classList.add('reveal')});
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  },{threshold:.15,rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+  // Table count-up. Each value span is pinned to its final rendered width
+  // (inline-block, measured min-width, right-aligned) so the columns cannot
+  // move while digits change. Values then fade out and reappear counting up,
+  // one row after another, once the table is on screen.
+  var vals=document.querySelectorAll('.cmp .v');
+  vals.forEach(function(v){
+    v.dataset.final=v.textContent;
+    var w=Math.ceil(v.getBoundingClientRect().width);
+    v.style.display='inline-block';
+    v.style.minWidth=w+'px';
+    v.style.textAlign='right';
+    v.style.transition='opacity .6s ease';
+    v.style.opacity='0';
+  });
+  var ioCount=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.querySelectorAll('tbody tr').forEach(function(row,i){
+        setTimeout(function(){
+          row.querySelectorAll('.v').forEach(function(v){
+            if(!v.dataset.counted){v.dataset.counted='1';count(v)}
+          });
+        },i*180);
+      });
+      ioCount.unobserve(e.target);
+    });
+  },{threshold:.35,rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.cmp').forEach(function(el){ioCount.observe(el)});
+
+  // Stat count-up: parse "94.5%" / "−£21,594", animate from 0, keep the sign,
+  // suffix, decimal places, and thousands separators of the real value.
+  function count(el){
+    var m=(el.dataset.final||el.textContent).match(/^([−+-]?£?)([\d,.]+)(.*)$/);
+    if(!m){el.style.opacity='1';return}
+    var pre=m[1],num=m[2].replace(/,/g,''),grouped=m[2].indexOf(',')>-1;
+    var target=parseFloat(num),suffix=m[3],dp=(num.split('.')[1]||'').length,t0=null;
+    function fmt(v){
+      var s=v.toFixed(dp);
+      return grouped?s.replace(/\B(?=(\d{3})+(?!\d))/g,','):s;
+    }
+    function step(t){
+      if(t0===null)t0=t;
+      var p=Math.min((t-t0)/1800,1),eased=1-Math.pow(1-p,4);
+      el.textContent=pre+fmt(target*eased)+suffix;
+      if(p<1)requestAnimationFrame(step);
+    }
+    el.textContent=pre+fmt(0)+suffix;
+    el.style.opacity='1';
+    requestAnimationFrame(step);
+  }
+})();
+</script>
+<script data-goatcounter="https://glanvilllabs.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
