@@ -97,7 +97,7 @@ nav .btn{padding:8px 15px;font-size:12px}
 }
 
 /* offer: rate-card ledger. Heavy top/bottom rules, hairlines between rows.
-   Rows cannot misalign; the price column reads as a single scan line. */
+   Rows cannot misalign; the label column reads as a single scan line. */
 
 .offer{padding:34px 0 96px}
 .ledger{border-top:2px solid var(--rule-strong);border-bottom:2px solid var(--rule-strong);counter-reset:step}
@@ -106,10 +106,6 @@ nav .btn{padding:8px 15px;font-size:12px}
 .ledger-row .k{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);padding-top:5px}
 .ledger-row .k::before{content:counter(step,decimal-leading-zero);display:block;color:var(--accent);margin-bottom:6px}
 .ledger-row .d{margin:0;font-size:16px;line-height:1.65;max-width:58ch;color:var(--body)}
-.ledger-row .money{text-align:right;font-family:var(--mono);margin:0}
-.ledger-row .amt{display:block;font-size:24px;font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
-.ledger-row .terms{display:block;font-size:12.5px;line-height:1.7;color:var(--muted);margin-top:8px}
-.offer-cta{margin:22px 0 0}
 
 /* evidence board: one worked example told as two ruled steps — map the
    operation, then the simulated comparison. */
@@ -163,8 +159,7 @@ main>section.plain{padding:88px 0;border-top:1px solid var(--rule)}
 .tech-list h3{font-size:16px;margin:0;grid-column:2}
 .tech-list p{font-size:14.5px;line-height:1.6;margin:0;grid-column:3;grid-row:1/3;color:var(--muted)}
 
-main>section.claims{padding:56px 0}
-.claims-row{display:grid;grid-template-columns:1fr 1fr}
+.claims-row{display:grid;grid-template-columns:1fr 1fr;margin-top:56px}
 .claims-row>div{padding-right:56px}
 .claims-row>div+div{border-left:1px solid var(--rule-strong);padding-left:56px;padding-right:0}
 .claims-row h3{font-size:16px;margin:0 0 10px}
@@ -181,14 +176,12 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
 @media (max-width:980px){
   .method-grid{grid-template-columns:1fr;gap:12px}
   .ledger-row{grid-template-columns:120px minmax(0,1fr);gap:0 32px}
-  .ledger-row .money{grid-column:2;text-align:left;margin-top:14px}
 }
 @media (max-width:860px){
   .hero{padding:44px 0 32px}
   .offer{padding:24px 0 72px}
   .ledger-row{grid-template-columns:1fr;padding:24px 0}
   .ledger-row .d{margin-top:12px}
-  .ledger-row .money{grid-column:1;margin-top:14px}
   main>section.plain{padding:64px 0}
   .step{padding:28px 0 32px}
   /* comparison table restacked: one bordered block per metric, the three
@@ -209,8 +202,7 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
   .tech-list>div{grid-template-columns:40px minmax(0,1fr)}
   .tech-list h3{grid-column:2}
   .tech-list p{grid-column:2;grid-row:auto;margin-top:8px}
-  main>section.claims{padding:48px 0}
-  .claims-row{grid-template-columns:1fr;gap:28px}
+  .claims-row{grid-template-columns:1fr;gap:28px;margin-top:40px}
   .claims-row>div{padding-right:0}
   .claims-row>div+div{border-left:0;border-top:1px solid var(--rule-strong);padding-left:0;padding-top:28px}
   header.site{position:static}
@@ -227,7 +219,6 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
       <a href="#package">What we offer</a>
       <a href="#evidence">How we analyse</a>
       <a href="#method">How we measure</a>
-      <a href="#pricing">Pricing</a>
       <a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book a call</a>
     </nav>
   </div>
@@ -245,7 +236,7 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
     </div>
     <p class="btn-note">A 30-minute conversation about your operation, no preparation needed.</p>
     <ul class="proof">
-      <li>Fixed-price engagements, starting prices below</li>
+      <li>Fixed-price engagements</li>
       <li>Bottlenecks costed in £/month, at your staff rates</li>
       <li>Every fix measured in the model before you buy it</li>
     </ul>
@@ -343,9 +334,6 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
       </div>
     </div>
   </div>
-</section>
-
-<section class="plain claims">
   <div class="wrap">
     <div class="claims-row">
       <div>
@@ -357,27 +345,6 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
         <p>We strip names before anything is modelled and work from workflow timestamps alone. The model finds bottlenecks in how work moves, and it never scores individuals.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="plain" id="pricing">
-  <div class="wrap">
-    <h2>Pricing</h2>
-    <div class="ledger">
-      <div class="ledger-row">
-        <span class="k">Audit</span>
-        <p class="money"><span class="amt">from £5,000</span><span class="terms">fixed price per project</span></p>
-      </div>
-      <div class="ledger-row">
-        <span class="k">Build</span>
-        <p class="money"><span class="amt">from £8,000</span><span class="terms">fixed per project · scoped and quoted in the audit report</span></p>
-      </div>
-      <div class="ledger-row">
-        <span class="k">Manage</span>
-        <p class="money"><span class="amt">from £950</span><span class="terms">per month</span></p>
-      </div>
-    </div>
-    <p class="offer-cta"><a class="btn btn-primary" href="https://calendly.com/callum-glanvilllabs/30min" data-goatcounter-click="book-call">Book an audit call</a></p>
   </div>
 </section>
 
@@ -404,7 +371,7 @@ footer.site{border-top:1px solid var(--rule);padding:28px 0;font-family:var(--mo
 
   // Scroll reveal: groups stagger their children; lone elements rise alone.
   var groups=['.ledger','.demo','.claims-row','.tech-list'];
-  var singles=['main h2','.lede','.offer-cta','.board-cta','.contact-action','.contact-alt'];
+  var singles=['main h2','.lede','.board-cta','.contact-action','.contact-alt'];
   groups.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(g){
       Array.prototype.forEach.call(g.children,function(el,i){
